@@ -143,6 +143,13 @@ return [
             'message' => 'Your request has been sent. Our team will contact you as soon as possible.',
             'btn' => 'Send Another Message',
         ],
+        'errors' => [
+            'rate_limit' => 'Too many submissions. Please try again later.',
+            'invalid_email' => 'Please enter a valid email address.',
+            'invalid_phone' => 'Please enter a valid phone number.',
+            'spam_detected' => 'Spam detected. Submission blocked.',
+            'database_error' => 'Failed to save your submission. Please try again.',
+        ],
     ],
     'footer' => [
         'tagline' => 'Reliable Printing & Packaging Solutions',

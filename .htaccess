@@ -47,6 +47,18 @@ AddDefaultCharset UTF-8
     Deny from all
 </FilesMatch>
 
+# Protect specific files
+<FilesMatch "(^config\.php|^database\.sql|^\.env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect sensitive directories
+<DirectoryMatch "(includes|logs)">
+    Order allow,deny
+    Deny from all
+</DirectoryMatch>
+
 # Error pages
 ErrorDocument 404 /404.php
 ErrorDocument 500 /500.php

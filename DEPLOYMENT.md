@@ -121,7 +121,6 @@ DB_PASS=YOUR_DATABASE_PASSWORD
 MAIL_FROM_EMAIL=info@latrungprint.vn
 MAIL_FROM_NAME="La TRUNG Printing & Packaging"
 MAIL_TO_EMAIL=info@latrungprint.vn
-MAIL_ADMIN_EMAIL=admin@latrungprint.vn
 
 # SMTP (Optional - leave empty to use PHP mail())
 SMTP_HOST=

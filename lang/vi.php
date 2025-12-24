@@ -143,6 +143,13 @@ return [
             'message' => 'Yêu cầu của bạn đã được gửi đi. Chúng tôi sẽ phản hồi trong thời gian sớm nhất.',
             'btn' => 'Gửi Tin Nhắn Khác',
         ],
+        'errors' => [
+            'rate_limit' => 'Quá nhiều lần gửi. Vui lòng thử lại sau.',
+            'invalid_email' => 'Vui lòng nhập địa chỉ email hợp lệ.',
+            'invalid_phone' => 'Vui lòng nhập số điện thoại hợp lệ.',
+            'spam_detected' => 'Phát hiện spam. Đã chặn gửi.',
+            'database_error' => 'Không thể lưu yêu cầu của bạn. Vui lòng thử lại.',
+        ],
     ],
     'footer' => [
         'tagline' => 'Giải Pháp In Ấn & Bao Bì Chuyên Nghiệp',

@@ -73,7 +73,6 @@ define('DB_CHARSET', env('DB_CHARSET', 'utf8mb4'));
 define('MAIL_FROM_EMAIL', env('MAIL_FROM_EMAIL', 'info@latrungprint.vn'));
 define('MAIL_FROM_NAME', env('MAIL_FROM_NAME', 'La TRUNG Printing & Packaging'));
 define('MAIL_TO_EMAIL', env('MAIL_TO_EMAIL', 'info@latrungprint.vn'));
-define('MAIL_ADMIN_EMAIL', env('MAIL_ADMIN_EMAIL', 'admin@latrungprint.vn'));
 
 // SMTP Configuration
 define('SMTP_HOST', env('SMTP_HOST', ''));
