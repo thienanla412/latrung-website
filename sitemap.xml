@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.latrungprint.vn/</loc>
+        <lastmod>2024-12-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.latrungprint.vn/?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://www.latrungprint.vn/?lang=vi"/>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://www.latrungprint.vn/about</loc>
+        <lastmod>2024-12-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.latrungprint.vn/about?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://www.latrungprint.vn/about?lang=vi"/>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://www.latrungprint.vn/contact</loc>
+        <lastmod>2024-12-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.latrungprint.vn/contact?lang=en"/>
+        <xhtml:link rel="alternate" hreflang="vi" href="https://www.latrungprint.vn/contact?lang=vi"/>
+    </url>
+
+</urlset>

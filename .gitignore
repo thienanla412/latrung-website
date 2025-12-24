@@ -1,0 +1,49 @@
+# Environment Configuration
+.env
+
+# Logs
+logs/
+*.log
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# Backup Files
+*.bak
+*.backup
+*.sql.gz
+
+# Cache
+cache/
+*.cache
+
+# Dependencies (if using Composer)
+vendor/
+composer.lock
+
+# Build files
+node_modules/
+dist/
+build/
+
+# Database dumps (keep database.sql for initial schema)
+*.sql
+!database.sql
+
+# Sensitive data
+credentials.json
+secrets.json

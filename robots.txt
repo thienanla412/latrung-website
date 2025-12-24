@@ -1,0 +1,15 @@
+# robots.txt for La TRUNG Printing & Packaging
+
+User-agent: *
+Allow: /
+
+# Disallow access to sensitive areas
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /config.php
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /database.sql
+
+# Sitemap location
+Sitemap: https://www.latrungprint.vn/sitemap.xml
