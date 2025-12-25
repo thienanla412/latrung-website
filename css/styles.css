@@ -1734,13 +1734,18 @@ section {
     }
 
     .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
+        gap: 1rem;
     }
 
     .contact-icon {
-        align-self: flex-start;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+        width: 20px;
+        height: 20px;
     }
 
     .service-card {
