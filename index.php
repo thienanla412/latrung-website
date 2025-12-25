@@ -10,7 +10,16 @@ $pageTitle = 'Home | La TRUNG Printing & Packaging';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $pageTitle; ?></title>
     <meta name="description" content="La TRUNG - Leading offset printing and packaging company since 2004. Specializing in mass production of premium printed materials for global markets.">
-    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Structured Data for SEO -->
+    <?php include 'includes/structured-data.php'; ?>
+
     <link rel="stylesheet" href="css/styles.css?v=<?php echo filemtime('css/styles.css'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
