@@ -11,7 +11,7 @@ $pageTitle = 'Home | La TRUNG Printing & Packaging';
     <title><?php echo $pageTitle; ?></title>
     <meta name="description" content="La TRUNG - Leading offset printing and packaging company since 2004. Specializing in mass production of premium printed materials for global markets.">
     <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=<?php echo filemtime('css/styles.css'); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
