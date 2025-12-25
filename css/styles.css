@@ -92,7 +92,7 @@ p {
 
 /* === Container === */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -371,7 +371,7 @@ section {
 
 .section-header {
     text-align: center;
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto 4rem;
 }
 
@@ -689,8 +689,8 @@ section {
     padding: 4rem 0;
 }
 
-.intro-content {
-    max-width: 900px;
+.about-intro .intro-content {
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
@@ -737,7 +737,7 @@ section {
 .partnership-content,
 .positioning-content,
 .location-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -948,7 +948,7 @@ section {
 }
 
 .quality-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -1017,7 +1017,7 @@ section {
     padding: 3rem 0;
 }
 
-.intro-content {
+.services-intro .intro-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -1492,6 +1492,22 @@ section {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+
+    .about-intro .intro-content {
+        max-width: 900px;
+    }
+
+    .section-header {
+        max-width: 800px;
+    }
+
+    .about-content,
+    .confidentiality-content,
+    .partnership-content,
+    .positioning-content,
+    .location-content {
+        max-width: 900px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1535,15 +1551,18 @@ section {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 82px;
+        top: 0;
+        margin-top: 82px;
         flex-direction: column;
         background-color: var(--white);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease;
         box-shadow: var(--shadow-md);
         padding: 2rem 0;
         gap: 0;
+        max-height: calc(100vh - 82px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -1551,11 +1570,20 @@ section {
     }
 
     .nav-link {
-        padding: 1rem 0;
+        padding: 1rem 1.5rem;
+        display: block;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .mobile-menu-toggle {
         display: flex;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
     }
 
     .mobile-menu-toggle.active span:nth-child(1) {
@@ -1575,10 +1603,10 @@ section {
     }
 
     .lang-switcher {
-        position: fixed;
-        top: 20px;
-        right: 1.5rem;
-        z-index: 1001;
+        position: absolute;
+        top: auto;
+        right: 70px;
+        z-index: 10;
     }
 
     .services-grid,
@@ -1622,9 +1650,34 @@ section {
     .page-hero {
         padding: 3rem 0 2rem;
     }
+
+    .about-intro .intro-content,
+    .section-header {
+        max-width: 100%;
+    }
+
+    .about-content,
+    .confidentiality-content,
+    .partnership-content,
+    .positioning-content,
+    .location-content {
+        max-width: 100%;
+    }
+
+    .intro-title {
+        font-size: 1.5rem;
+    }
+
+    .intro-large {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
     h1 {
         font-size: 1.875rem;
     }
@@ -1648,5 +1701,55 @@ section {
     .client-logos {
         flex-direction: column;
         gap: 1.5rem;
+    }
+
+    .intro-title {
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    .intro-large {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-form-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .lang-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+        padding: 0.875rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .contact-icon {
+        align-self: flex-start;
+    }
+
+    .service-card {
+        padding: 1.25rem;
+    }
+
+    .process-card,
+    .value-card,
+    .cert-card {
+        padding: 1.5rem;
     }
 }

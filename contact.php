@@ -207,8 +207,8 @@ $csrfToken = generateCSRFToken();
                             <div>
                                 <h4><?php echo t('contact.info.phone'); ?></h4>
                                 <p style="margin: 0;"><?php echo t('contact.info.phone_office'); ?>: <a href="tel:+842838632759"><?php echo t('contact.info.phone_office_number'); ?></a></p>
-                                <p style="margin: 0;"><?php echo t('contact.info.phone_partnership'); ?>: <a href="tel:+84866988260"><?php echo t('contact.info.phone_partnership_number'); ?></a></p>
-                                <p style="margin: 0;"><?php echo t('contact.info.phone_technical'); ?>: <a href="tel:+84903672094"><?php echo t('contact.info.phone_technical_number'); ?></a></p>
+                                <p style="margin: 0;"><?php echo t('contact.info.phone_partnership'); ?>: <a href="tel:+84866988260"><?php echo t('contact.info.phone_partnership_number'); ?></a> <?php echo t('contact.info.phone_partnership_name'); ?></p>
+                                <p style="margin: 0;"><?php echo t('contact.info.phone_technical'); ?>: <a href="tel:+84903672094"><?php echo t('contact.info.phone_technical_number'); ?></a> <?php echo t('contact.info.phone_technical_name'); ?></p>
                             </div>
                         </div>
 
