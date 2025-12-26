@@ -27,7 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add initial hidden state
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.3s ease ${index * 0.04}s, transform 0.3s ease ${index * 0.04}s`;
+
+        // Use faster stagger on mobile (less delay accumulation)
+        const isMobile = window.innerWidth <= 768;
+        const staggerDelay = isMobile ? index * 0.02 : index * 0.04;
+        el.style.transition = `opacity 0.3s ease ${staggerDelay}s, transform 0.3s ease ${staggerDelay}s`;
 
         observer.observe(el);
     });
