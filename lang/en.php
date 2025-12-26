@@ -51,6 +51,14 @@ return [
             'p1' => 'La TRUNG Printing & Packaging is an offset printing and packaging company based in Ho Chi Minh City, Vietnam. Since 2004, we have supported business clients with stable, repeatable print production for packaging and commercial print applications.',
             'p2' => 'Our focus is not on one-off jobs or short-term volume, but on long-term production reliability, where consistency, process control, and delivery discipline matter as much as the final printed result.',
         ],
+        'facility' => [
+            'title' => 'Our Manufacturing Facility',
+            'badge' => 'Operating since 2004',
+            'intro' => 'Our Ho Chi Minh City facility is equipped with modern offset printing equipment and strict quality control systems, ensuring stable production for high-volume orders.',
+            'feature1' => 'Industrial offset printing presses',
+            'feature2' => '24/7 operations for large-scale orders',
+            'feature3' => 'Quality control at every stage',
+        ],
         'what_we_do' => [
             'title' => 'What We Do',
             'intro' => 'We specialize in offset printing for medium to large-scale production, supporting clients who require:',

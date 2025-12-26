@@ -51,6 +51,14 @@ return [
             'p1' => 'La TRUNG Printing & Packaging là công ty in offset và bao bì tại Thành phố Hồ Chí Minh, Việt Nam. Từ năm 2004, chúng tôi đã đồng hành cùng các khách hàng doanh nghiệp trong việc cung cấp giải pháp in ấn ổn định, có tính lặp lại cao cho bao bì và các ấn phẩm thương mại.',
             'p2' => 'Chúng tôi không đặt trọng tâm vào các đơn hàng ngắn hạn hoặc nhỏ lẻ, mà hướng đến sự ổn định lâu dài trong việc sản xuất — nơi tính nhất quán, kiểm soát quy trình và kỷ luật giao hàng ngang tầm quan trọng với thành phẩm in.',
         ],
+        'facility' => [
+            'title' => 'Cơ Sở Sản Xuất',
+            'badge' => 'Hoạt động từ 2004',
+            'intro' => 'Nhà máy của chúng tôi tại TP. Hồ Chí Minh được trang bị máy móc in offset hiện đại và hệ thống kiểm soát chất lượng nghiêm ngặt, đảm bảo sản xuất ổn định cho các đơn hàng lớn.',
+            'feature1' => 'Máy in offset công nghiệp',
+            'feature2' => 'Vận hành 24/7 cho đơn hàng khối lượng lớn',
+            'feature3' => 'Kiểm soát chất lượng tại mọi công đoạn',
+        ],
         'what_we_do' => [
             'title' => 'Chúng Tôi Làm Gì',
             'intro' => 'Chúng tôi chuyên về in offset cho sản xuất quy mô trung bình đến lớn, hỗ trợ khách hàng có yêu cầu:',

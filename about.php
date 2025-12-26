@@ -46,6 +46,57 @@ $pageTitle = 'About Us | La TRUNG Printing & Packaging';
         </div>
     </section>
 
+    <!-- Our Facility -->
+    <section class="facility-showcase">
+        <div class="container">
+            <div class="facility-content">
+                <div class="facility-image">
+                    <img src="/assets/manufacturer.png" alt="La TRUNG Manufacturing Facility">
+                    <div class="image-badge">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 11L12 14L22 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span><?php echo t('about.facility.badge'); ?></span>
+                    </div>
+                </div>
+                <div class="facility-text">
+                    <h2><?php echo t('about.facility.title'); ?></h2>
+                    <p class="facility-intro"><?php echo t('about.facility.intro'); ?></p>
+                    <div class="facility-features">
+                        <div class="facility-feature">
+                            <div class="feature-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="#2DBAA7" stroke-width="2"/>
+                                    <path d="M3 9h18M9 3v18" stroke="#2DBAA7" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <span><?php echo t('about.facility.feature1'); ?></span>
+                        </div>
+                        <div class="facility-feature">
+                            <div class="feature-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="9" stroke="#2DBAA7" stroke-width="2"/>
+                                    <path d="M12 6v6l4 2" stroke="#2DBAA7" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <span><?php echo t('about.facility.feature2'); ?></span>
+                        </div>
+                        <div class="facility-feature">
+                            <div class="feature-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" stroke="#2DBAA7" stroke-width="2"/>
+                                    <path d="M9 12l2 2 4-4" stroke="#2DBAA7" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <span><?php echo t('about.facility.feature3'); ?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- What We Do -->
     <section class="about-section">
         <div class="container">

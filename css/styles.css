@@ -567,6 +567,123 @@ section {
     margin: 1.5rem auto 0;
 }
 
+/* === Facility Showcase === */
+.facility-showcase {
+    padding: 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.facility-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: 600px;
+}
+
+.facility-image {
+    position: relative;
+    height: 100%;
+    min-height: 600px;
+}
+
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 24px 24px 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.image-badge {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(45, 186, 167, 0.4);
+    animation: float 3s ease-in-out infinite;
+}
+
+.image-badge svg {
+    flex-shrink: 0;
+}
+
+.facility-text {
+    padding: 3rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.facility-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.facility-text h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-purple));
+    border-radius: 2px;
+}
+
+.facility-intro {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin: 2rem 0 2.5rem 0;
+}
+
+.facility-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.facility-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 12px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.facility-feature:hover {
+    border-color: var(--primary-color);
+    transform: translateX(8px);
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-icon-small {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(45, 186, 167, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.facility-feature span {
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
 .section-label {
     display: inline-block;
     font-size: 0.875rem;
@@ -743,6 +860,84 @@ section {
 
 .feature p {
     font-size: 0.95rem;
+}
+
+/* === Home Manufacturer Showcase === */
+.home-manufacturer {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.home-manufacturer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.manufacturer-image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.manufacturer-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.manufacturer-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(45, 186, 167, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.overlay-badge svg {
+    flex-shrink: 0;
+}
+
+.manufacturer-text-wrapper h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.manufacturer-text-wrapper p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
 }
 
 /* === Industries === */
@@ -1830,6 +2025,37 @@ section {
         gap: 3rem;
     }
 
+    .facility-content {
+        grid-template-columns: 1fr;
+        gap: 0;
+        min-height: auto;
+    }
+
+    .facility-image {
+        min-height: 400px;
+        order: 2;
+    }
+
+    .facility-image img {
+        border-radius: 0 0 24px 24px;
+    }
+
+    .facility-text {
+        padding: 2rem 1.5rem;
+        order: 1;
+    }
+
+    .facility-text h2 {
+        font-size: 2rem;
+    }
+
+    .image-badge {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
     .about-intro .intro-content {
         max-width: 900px;
     }
@@ -1944,6 +2170,27 @@ section {
         top: auto;
         right: 70px;
         z-index: 10;
+    }
+
+    .home-manufacturer {
+        padding: 3rem 0;
+    }
+
+    .home-manufacturer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .manufacturer-image-wrapper img {
+        height: 300px;
+    }
+
+    .manufacturer-text-wrapper h2 {
+        font-size: 1.75rem;
+    }
+
+    .manufacturer-text-wrapper p {
+        font-size: 1rem;
     }
 
     .services-grid,
