@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements with animation classes
-    const animatedElements = document.querySelectorAll('.service-card, .feature, .industry-card, .section-header');
+    const animatedElements = document.querySelectorAll('.service-card, .feature, .industry-card, .section-header, .manufacturer-image-wrapper, .manufacturer-text-wrapper');
 
     animatedElements.forEach((el, index) => {
         // Add initial hidden state
