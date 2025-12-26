@@ -952,7 +952,7 @@ section {
 }
 
 .industry-card {
-    padding: 2.5rem;
+    padding: 2rem 1.5rem;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: var(--white);
     border-radius: 16px;
@@ -960,6 +960,11 @@ section {
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .industry-card::before {
@@ -1008,9 +1013,9 @@ section {
 }
 
 .industry-icon {
-    margin: 0 auto 1.5rem;
-    width: 64px;
-    height: 64px;
+    margin: 0 auto 1rem;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1025,6 +1030,8 @@ section {
 .industry-card h3 {
     color: var(--white);
     margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.4;
 }
 
 .industry-card p {
