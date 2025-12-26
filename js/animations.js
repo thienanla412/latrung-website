@@ -28,10 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
 
-        // Use faster stagger on mobile (less delay accumulation)
-        const isMobile = window.innerWidth <= 768;
-        const staggerDelay = isMobile ? index * 0.02 : index * 0.04;
-        el.style.transition = `opacity 0.3s ease ${staggerDelay}s, transform 0.3s ease ${staggerDelay}s`;
+        // No stagger delay - all elements appear together
+        el.style.transition = `opacity 0.3s ease, transform 0.3s ease`;
 
         observer.observe(el);
     });
