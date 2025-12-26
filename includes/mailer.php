@@ -333,9 +333,17 @@ class Mailer {
      * Send auto-reply to contact form submitter
      */
     public function sendContactFormAutoReply($formData) {
-        $subject = "Thank you for contacting " . SITE_NAME;
+        // Get language from form data, default to Vietnamese
+        $language = $formData['language'] ?? 'vi';
 
-        $message = $this->buildAutoReplyEmail($formData);
+        // Set subject based on language
+        if ($language === 'en') {
+            $subject = "Thank you for contacting " . SITE_NAME;
+        } else {
+            $subject = "Cảm ơn bạn đã liên hệ " . SITE_NAME;
+        }
+
+        $message = $this->buildAutoReplyEmail($formData, $language);
 
         $options = [
             'isHTML' => true
@@ -419,8 +427,27 @@ class Mailer {
     /**
      * Build auto-reply email HTML
      */
-    private function buildAutoReplyEmail($data) {
-        $name = htmlspecialchars($data['name'] ?? 'Valued Customer');
+    private function buildAutoReplyEmail($data, $language = 'vi') {
+        $name = htmlspecialchars($data['name'] ?? ($language === 'en' ? 'Valued Customer' : 'Quý khách'));
+
+        // Set content based on language
+        if ($language === 'en') {
+            $greeting = 'Dear';
+            $thankYou = 'Thank you for contacting ' . SITE_NAME . '. We have received your inquiry and our team will review it shortly.';
+            $responseTime = 'We typically respond to all inquiries within 24 business hours. If your request is urgent, please feel free to call us at +84 (028) 38-632-759.';
+            $lookForward = 'We look forward to working with you.';
+            $regards = 'Best regards,';
+            $team = SITE_NAME . ' Team';
+            $automated = 'This is an automated message. Please do not reply to this email.';
+        } else {
+            $greeting = 'Kính gửi';
+            $thankYou = 'Cảm ơn quý khách đã liên hệ với ' . SITE_NAME . '. Chúng tôi đã nhận được yêu cầu của quý khách và đội ngũ của chúng tôi sẽ xem xét trong thời gian sớm nhất.';
+            $responseTime = 'Chúng tôi thường phản hồi tất cả các yêu cầu trong vòng 24 giờ làm việc. Nếu yêu cầu của quý khách khẩn cấp, vui lòng gọi cho chúng tôi theo số +84 (028) 38-632-759.';
+            $lookForward = 'Chúng tôi mong được hợp tác cùng quý khách.';
+            $regards = 'Trân trọng,';
+            $team = 'Đội ngũ ' . SITE_NAME;
+            $automated = 'Đây là thông báo tự động. Vui lòng không trả lời email này.';
+        }
 
         $html = '<!DOCTYPE html>
 <html>
@@ -440,14 +467,14 @@ class Mailer {
             <h2>' . SITE_NAME . '</h2>
         </div>
         <div class="content">
-            <p>Dear ' . $name . ',</p>
-            <p>Thank you for contacting ' . SITE_NAME . '. We have received your inquiry and our team will review it shortly.</p>
-            <p>We typically respond to all inquiries within 24 business hours. If your request is urgent, please feel free to call us at +84 (028) 38-632-759.</p>
-            <p>We look forward to working with you.</p>
-            <p>Best regards,<br>' . SITE_NAME . ' Team</p>
+            <p>' . $greeting . ' ' . $name . ',</p>
+            <p>' . $thankYou . '</p>
+            <p>' . $responseTime . '</p>
+            <p>' . $lookForward . '</p>
+            <p>' . $regards . '<br>' . $team . '</p>
         </div>
         <div class="footer">
-            <p>This is an automated message. Please do not reply to this email.</p>
+            <p>' . $automated . '</p>
             <p>' . SITE_NAME . ' | www.latrungprint.vn</p>
         </div>
     </div>
