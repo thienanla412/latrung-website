@@ -836,7 +836,7 @@ section {
 }
 
 .feature:hover .feature-icon {
-    transform: rotateY(360deg) scale(1.1);
+    transform: scale(1.05);
     background: linear-gradient(135deg, rgba(45, 186, 167, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
 }
 
@@ -845,7 +845,7 @@ section {
 }
 
 .feature:hover .feature-icon svg {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .feature h3 {
