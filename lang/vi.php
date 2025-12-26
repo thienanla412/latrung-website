@@ -8,7 +8,7 @@ return [
     'home' => [
         'hero' => [
             'title' => 'In Offset Ổn Định Cho Sản Xuất Quy Mô Lớn',
-            'subtitle' => 'Chúng tôi tập trung vào in offset chất lượng cao, với việc kiểm soát màu sắc chặt chẽ, kỷ luật trong sản xuất và định hướng hợp tác lâu dài cho khách hàng doanh nghiệp.',
+            'subtitle' => 'Chúng tôi tập trung vào in offset chất lượng cao, với việc kiểm soát màu sắc chặt chẽ, và kỷ luật<br>trong sản xuất và định hướng hợp tác lâu dài cho khách hàng doanh nghiệp.',
             'btn_discuss' => 'Thảo Luận Nhu Cầu',
             'btn_about' => 'Giới Thiệu',
         ],
@@ -33,10 +33,10 @@ return [
         ],
         'industries' => [
             'title' => 'Khách Hàng Của Chúng Tôi',
-            'subtitle' => 'Chúng tôi phục vụ doanh nghiệp thuộc mọi ngành. Khách hàng chính của chúng tôi đến từ:',
+            'subtitle' => 'Chúng tôi phục vụ doanh nghiệp thuộc mọi ngành.<br>Khách hàng chính của chúng tôi đến từ:',
             'pharmaceutical' => 'Dược Phẩm',
             'fmcg' => 'Hàng Tiêu Dùng',
-            'beauty' => 'Làm Đẹp &<br>Mỹ Phẩm',
+            'beauty' => 'Làm Đẹp & Mỹ Phẩm',
             'healthcare' => 'Chăm Sóc Sức Khỏe',
             'fnb' => 'Dịch Vụ Ăn Uống',
             'more' => 'Và Nhiều Lĩnh Vực Khác',
@@ -54,9 +54,9 @@ return [
         'facility' => [
             'title' => 'Cơ Sở Sản Xuất',
             'badge' => 'Hoạt động từ 2004',
-            'intro' => 'Nhà máy của chúng tôi tại TP. Hồ Chí Minh được trang bị máy móc in offset hiện đại và hệ thống kiểm soát chất lượng nghiêm ngặt, đảm bảo sản xuất ổn định cho các đơn hàng lớn.',
+            'intro' => 'Xưởng sản xuất của chúng tôi tại TP.HCM được trang bị máy in offset hiện đại cũng như thiết bị gia công sau in, và hệ thống kiểm soát chất lượng nghiêm ngặt, đảm bảo sản xuất ổn định cho các đơn hàng lớn.',
             'feature1' => 'Máy in offset công nghiệp',
-            'feature2' => 'Vận hành 24/7 cho đơn hàng khối lượng lớn',
+            'feature2' => 'Vận hành liên tục cho đơn hàng khối lượng lớn',
             'feature3' => 'Kiểm soát chất lượng tại mọi công đoạn',
         ],
         'what_we_do' => [

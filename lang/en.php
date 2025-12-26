@@ -54,9 +54,9 @@ return [
         'facility' => [
             'title' => 'Our Manufacturing Facility',
             'badge' => 'Operating since 2004',
-            'intro' => 'Our Ho Chi Minh City facility is equipped with modern offset printing equipment and strict quality control systems, ensuring stable production for high-volume orders.',
+            'intro' => 'Our Ho Chi Minh City facility is equipped with modern offset printing equipment as well as post-printing machines, and strict quality control systems, ensuring stable production for high-volume orders.',
             'feature1' => 'Industrial offset printing presses',
-            'feature2' => '24/7 operations for large-scale orders',
+            'feature2' => 'Continuous operations for large-scale orders',
             'feature3' => 'Quality control at every stage',
         ],
         'what_we_do' => [
