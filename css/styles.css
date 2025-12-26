@@ -886,8 +886,7 @@ section {
 
 .manufacturer-image-wrapper img {
     width: 100%;
-    height: 500px;
-    object-fit: contain;
+    height: auto;
     display: block;
     transition: transform 0.5s ease;
 }
@@ -2187,10 +2186,6 @@ section {
     .home-manufacturer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .manufacturer-image-wrapper img {
-        height: 300px;
     }
 
     .manufacturer-text-wrapper h2 {
