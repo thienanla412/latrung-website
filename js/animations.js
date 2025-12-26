@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add initial hidden state
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        el.style.transition = `opacity 0.3s ease ${index * 0.04}s, transform 0.3s ease ${index * 0.04}s`;
 
         observer.observe(el);
     });
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.service-card, .industry-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            this.style.transition = 'all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
         });
     });
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (stats.length > 0) {
         const animateCounter = (element) => {
             const target = parseInt(element.getAttribute('data-target')) || parseInt(element.textContent);
-            const duration = 2000;
+            const duration = 1000;
             const step = target / (duration / 16);
             let current = 0;
 
