@@ -207,5 +207,7 @@ $pageTitle = 'About Us | La TRUNG Printing & Packaging';
     </section>
 
     <?php include 'includes/footer.php'; ?>
+
+    <script src="/js/animations.js"></script>
 </body>
 </html>
