@@ -441,7 +441,7 @@ class Mailer {
             $automated = 'This is an automated message. Please do not reply to this email.';
         } else {
             $greeting = 'Kính gửi';
-            $thankYou = 'Cảm ơn quý khách đã liên hệ với ' . SITE_NAME . '. Chúng tôi đã nhận được yêu cầu của quý khách và đội ngũ của chúng tôi sẽ xem xét trong thời gian sớm nhất.';
+            $thankYou = 'Cảm ơn quý khách đã liên hệ tới ' . SITE_NAME . '. Chúng tôi đã nhận được yêu cầu của quý khách và đội ngũ của chúng tôi sẽ phản hồi trong thời gian sớm nhất.';
             $responseTime = 'Chúng tôi thường phản hồi tất cả các yêu cầu trong vòng 24 giờ làm việc. Nếu yêu cầu của quý khách khẩn cấp, vui lòng gọi cho chúng tôi theo số +84 (028) 38-632-759.';
             $lookForward = 'Chúng tôi mong được hợp tác cùng quý khách.';
             $regards = 'Trân trọng,';
