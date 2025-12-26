@@ -94,17 +94,223 @@ class Mailer {
     }
 
     /**
-     * Send email using SMTP (basic implementation)
-     * For production, consider using PHPMailer library
+     * Send email using SMTP
      */
     private function sendSMTP($to, $subject, $message, $options = []) {
-        // This is a placeholder for SMTP implementation
-        // In production, use PHPMailer or similar library for robust SMTP support
-        $this->lastError = "SMTP not fully implemented. Please use PHPMailer library for SMTP support.";
-        $this->logError("SMTP send attempted but not fully implemented");
+        $isHTML = $options['isHTML'] ?? false;
+        $replyTo = $options['replyTo'] ?? null;
 
-        // Fall back to PHP mail
-        return $this->sendPHPMail($to, $subject, $message, $options);
+        try {
+            // Determine encryption type and context
+            $encryption = strtolower(SMTP_ENCRYPTION);
+            $context = stream_context_create([
+                'ssl' => [
+                    'verify_peer' => true,
+                    'verify_peer_name' => true,
+                    'allow_self_signed' => false
+                ]
+            ]);
+
+            // Connect to SMTP server
+            if ($encryption === 'ssl') {
+                // SSL connection (port 465)
+                $smtp = stream_socket_client(
+                    'ssl://' . SMTP_HOST . ':' . SMTP_PORT,
+                    $errno,
+                    $errstr,
+                    30,
+                    STREAM_CLIENT_CONNECT,
+                    $context
+                );
+            } else {
+                // Plain connection, will upgrade to TLS (port 587)
+                $smtp = stream_socket_client(
+                    'tcp://' . SMTP_HOST . ':' . SMTP_PORT,
+                    $errno,
+                    $errstr,
+                    30,
+                    STREAM_CLIENT_CONNECT
+                );
+            }
+
+            if (!$smtp) {
+                $this->lastError = "Failed to connect to SMTP server: {$errstr} ({$errno})";
+                $this->logError($this->lastError);
+                return false;
+            }
+
+            // Read server greeting (may be multi-line)
+            $greeting = '';
+            while ($line = fgets($smtp, 515)) {
+                $greeting .= $line;
+                // Check if this is the last line (has space after code instead of dash)
+                if (strlen($line) >= 4 && $line[3] === ' ') {
+                    break;
+                }
+            }
+
+            if (substr($greeting, 0, 3) !== '220') {
+                $this->lastError = "SMTP server error: {$greeting}";
+                fclose($smtp);
+                return false;
+            }
+
+            // Send EHLO
+            fwrite($smtp, "EHLO " . SMTP_HOST . "\r\n");
+            $ehloResponse = $this->readSMTPResponse($smtp);
+
+            // Check if EHLO was successful
+            if (substr($ehloResponse, 0, 3) !== '250') {
+                $this->lastError = "EHLO failed: {$ehloResponse}";
+                fclose($smtp);
+                return false;
+            }
+
+            // Start TLS if using STARTTLS (port 587)
+            if ($encryption === 'tls') {
+                fwrite($smtp, "STARTTLS\r\n");
+                $response = fgets($smtp, 515);
+                if (substr($response, 0, 3) !== '220') {
+                    $this->lastError = "STARTTLS failed: {$response}";
+                    fclose($smtp);
+                    return false;
+                }
+
+                stream_socket_enable_crypto($smtp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+
+                // Send EHLO again after STARTTLS
+                fwrite($smtp, "EHLO " . SMTP_HOST . "\r\n");
+                $response = $this->readSMTPResponse($smtp);
+            }
+
+            // Authenticate
+            if (!empty(SMTP_USER) && !empty(SMTP_PASS)) {
+                // Try AUTH LOGIN first
+                fwrite($smtp, "AUTH LOGIN\r\n");
+                $response = fgets($smtp, 515);
+
+                // If AUTH LOGIN not supported (504), try AUTH PLAIN
+                if (substr($response, 0, 3) === '504' || substr($response, 0, 3) === '502') {
+                    // AUTH LOGIN not supported, try AUTH PLAIN
+                    $authString = base64_encode("\0" . SMTP_USER . "\0" . SMTP_PASS);
+                    fwrite($smtp, "AUTH PLAIN {$authString}\r\n");
+                    $response = fgets($smtp, 515);
+
+                    if (substr($response, 0, 3) !== '235') {
+                        $this->lastError = "AUTH PLAIN failed. Check credentials: {$response}";
+                        fclose($smtp);
+                        return false;
+                    }
+                } elseif (substr($response, 0, 3) === '334') {
+                    // AUTH LOGIN supported, continue
+                    fwrite($smtp, base64_encode(SMTP_USER) . "\r\n");
+                    $response = fgets($smtp, 515);
+
+                    if (substr($response, 0, 3) !== '334') {
+                        $this->lastError = "Username authentication failed: {$response}";
+                        fclose($smtp);
+                        return false;
+                    }
+
+                    fwrite($smtp, base64_encode(SMTP_PASS) . "\r\n");
+                    $response = fgets($smtp, 515);
+
+                    if (substr($response, 0, 3) !== '235') {
+                        $this->lastError = "Password authentication failed. Check your credentials: {$response}";
+                        fclose($smtp);
+                        return false;
+                    }
+                } else {
+                    $this->lastError = "Unexpected AUTH response: {$response}";
+                    fclose($smtp);
+                    return false;
+                }
+            }
+
+            // Send MAIL FROM
+            fwrite($smtp, "MAIL FROM: <" . MAIL_FROM_EMAIL . ">\r\n");
+            $response = fgets($smtp, 515);
+            if (substr($response, 0, 3) !== '250') {
+                $this->lastError = "MAIL FROM failed: {$response}";
+                fclose($smtp);
+                return false;
+            }
+
+            // Send RCPT TO
+            fwrite($smtp, "RCPT TO: <{$to}>\r\n");
+            $response = fgets($smtp, 515);
+            if (substr($response, 0, 3) !== '250') {
+                $this->lastError = "RCPT TO failed: {$response}";
+                fclose($smtp);
+                return false;
+            }
+
+            // Send DATA
+            fwrite($smtp, "DATA\r\n");
+            $response = fgets($smtp, 515);
+            if (substr($response, 0, 3) !== '354') {
+                $this->lastError = "DATA command failed: {$response}";
+                fclose($smtp);
+                return false;
+            }
+
+            // Build email headers and body
+            $headers = [];
+            $headers[] = "From: " . MAIL_FROM_NAME . " <" . MAIL_FROM_EMAIL . ">";
+            $headers[] = "To: <{$to}>";
+            $headers[] = "Subject: {$subject}";
+            $headers[] = "Date: " . date('r');
+            $headers[] = "MIME-Version: 1.0";
+
+            if ($isHTML) {
+                $headers[] = "Content-Type: text/html; charset=UTF-8";
+            } else {
+                $headers[] = "Content-Type: text/plain; charset=UTF-8";
+            }
+
+            if ($replyTo && filter_var($replyTo, FILTER_VALIDATE_EMAIL)) {
+                $headers[] = "Reply-To: <{$replyTo}>";
+            }
+
+            $headers[] = "X-Mailer: PHP/" . phpversion();
+
+            // Send headers and message
+            $emailContent = implode("\r\n", $headers) . "\r\n\r\n" . $message . "\r\n.";
+            fwrite($smtp, $emailContent . "\r\n");
+            $response = fgets($smtp, 515);
+
+            if (substr($response, 0, 3) !== '250') {
+                $this->lastError = "Failed to send message: {$response}";
+                fclose($smtp);
+                return false;
+            }
+
+            // Send QUIT
+            fwrite($smtp, "QUIT\r\n");
+            fclose($smtp);
+
+            $this->logEmail($to, $subject, 'success (SMTP)');
+            return true;
+
+        } catch (Exception $e) {
+            $this->lastError = "SMTP error: " . $e->getMessage();
+            $this->logError($this->lastError);
+            return false;
+        }
+    }
+
+    /**
+     * Read SMTP multi-line response
+     */
+    private function readSMTPResponse($smtp) {
+        $response = '';
+        while ($line = fgets($smtp, 515)) {
+            $response .= $line;
+            if (substr($line, 3, 1) === ' ') {
+                break;
+            }
+        }
+        return $response;
     }
 
     /**

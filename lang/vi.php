@@ -60,6 +60,11 @@ return [
             'req4' => 'Xử lý vật liệu và công đoạn gia công một cách cẩn trọng',
             'closing' => 'Công việc của chúng tôi bao gồm in offset và các công đoạn gia công sau in như cán màng, bế, gấp, dán, v.v. - chủ yếu phục vụ cho bao bì và các ấn phẩm thương mại.',
         ],
+        'clients' => [
+            'title' => 'Khách Hàng Chúng Tôi Phục Vụ',
+            'intro' => 'Chúng tôi làm việc với cả các tập đoàn lớn lẫn doanh nghiệp vừa và nhỏ, hỗ trợ nhu cầu in ấn ổn định và lâu dài cho bao bì và các ấn phẩm thương mại.',
+            'confidentiality' => 'Chúng tôi không công khai logo hoặc chi tiết dự án của khách hàng, nhằm tôn trọng các yêu cầu về bảo mật thông tin.',
+        ],
         'how_we_work' => [
             'title' => 'Cách Chúng Tôi Làm Việc',
             'subtitle' => 'In offset không chỉ là chuyện máy móc hay vật liệu. Đó là câu chuyện của quy trình và kỷ luật sản xuất.',
@@ -150,6 +155,9 @@ Phần lớn các mối quan hệ hợp tác của chúng tôi được xây d�
             'btn' => 'Gửi Tin Nhắn Khác',
         ],
         'errors' => [
+            'name_required' => 'Vui lòng nhập tên của bạn.',
+            'contact_required' => 'Vui lòng cung cấp số điện thoại hoặc email.',
+            'message_required' => 'Vui lòng mô tả sản phẩm hoặc yêu cầu của bạn.',
             'rate_limit' => 'Quá nhiều lần gửi. Vui lòng thử lại sau.',
             'invalid_email' => 'Vui lòng nhập địa chỉ email hợp lệ.',
             'invalid_phone' => 'Vui lòng nhập số điện thoại hợp lệ.',

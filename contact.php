@@ -40,7 +40,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $quantity = trim($_POST['quantity'] ?? '');
         $message = trim($_POST['message'] ?? '');
 
-        // Validation - only validate if provided
+        // Validation
+        // Name is required
+        if (empty($name)) {
+            $formError = t('contact.errors.name_required') ?: 'Please enter your name.';
+            throw new Exception($formError);
+        }
+
+        // Either phone or email is required
+        if (empty($phone) && empty($email)) {
+            $formError = t('contact.errors.contact_required') ?: 'Please provide either a phone number or email address.';
+            throw new Exception($formError);
+        }
+
+        // Message is required
+        if (empty($message)) {
+            $formError = t('contact.errors.message_required') ?: 'Please enter your product description or message.';
+            throw new Exception($formError);
+        }
+
         // Validate email only if provided
         if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $formError = t('contact.errors.invalid_email');
@@ -334,5 +352,67 @@ $csrfToken = generateCSRFToken();
     </section>
 
     <?php include 'includes/footer.php'; ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Phone number validation - only allow numbers, spaces, +, -, and parentheses
+            const phoneInput = document.getElementById('phone');
+
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    // Remove any characters that are not numbers, spaces, +, -, or parentheses
+                    const currentValue = e.target.value;
+                    const sanitizedValue = currentValue.replace(/[^0-9+\-\s()]/g, '');
+
+                    // If the value changed, update the input
+                    if (currentValue !== sanitizedValue) {
+                        e.target.value = sanitizedValue;
+                    }
+                });
+
+                // Also prevent paste of invalid characters
+                phoneInput.addEventListener('paste', function(e) {
+                    setTimeout(function() {
+                        const currentValue = phoneInput.value;
+                        const sanitizedValue = currentValue.replace(/[^0-9+\-\s()]/g, '');
+                        phoneInput.value = sanitizedValue;
+                    }, 10);
+                });
+            }
+
+            // Form validation
+            const contactForm = document.getElementById('contactForm');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const message = document.getElementById('message').value.trim();
+
+                    // Name is required
+                    if (!name) {
+                        e.preventDefault();
+                        alert('<?php echo addslashes(t('contact.errors.name_required') ?: 'Please enter your name.'); ?>');
+                        return false;
+                    }
+
+                    // Either phone or email is required
+                    if (!phone && !email) {
+                        e.preventDefault();
+                        alert('<?php echo addslashes(t('contact.errors.contact_required') ?: 'Please provide either a phone number or email address.'); ?>');
+                        return false;
+                    }
+
+                    // Message is required
+                    if (!message) {
+                        e.preventDefault();
+                        alert('<?php echo addslashes(t('contact.errors.message_required') ?: 'Please enter your product description or message.'); ?>');
+                        return false;
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

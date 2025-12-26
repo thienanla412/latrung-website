@@ -89,6 +89,25 @@ $pageTitle = 'About Us | La TRUNG Printing & Packaging';
         </div>
     </section>
 
+    <!-- Who We Work With -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><?php echo t('about.clients.title'); ?></h2>
+            </div>
+            <div class="about-content">
+                <p class="section-intro"><?php echo t('about.clients.intro'); ?></p>
+                <div class="confidentiality-note">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" stroke="#2DBAA7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M9 12L11 14L15 10" stroke="#2DBAA7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span><?php echo t('about.clients.confidentiality'); ?></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How We Work -->
     <section class="about-section bg-gray">
         <div class="container">

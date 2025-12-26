@@ -60,6 +60,11 @@ return [
             'req4' => 'Careful handling of materials and finishing processes',
             'closing' => 'Our work includes offset printing and related finishing processes such as laminating, die-cutting, folding, and gluing, primarily for packaging and commercial print applications.',
         ],
+        'clients' => [
+            'title' => 'Who We Work With',
+            'intro' => 'We work with both large corporations and small to medium-sized businesses, supporting them with stable, repeatable print production for packaging and commercial applications.',
+            'confidentiality' => 'We do not publicly display client logos or project details, in respect of confidentiality expectations.',
+        ],
         'how_we_work' => [
             'title' => 'How We Work',
             'subtitle' => 'Offset printing is not only about machines or materials. It is about process and production disciplines.',
@@ -149,6 +154,9 @@ return [
             'btn' => 'Send Another Message',
         ],
         'errors' => [
+            'name_required' => 'Please enter your name.',
+            'contact_required' => 'Please provide either a phone number or email address.',
+            'message_required' => 'Please enter your product description or message.',
             'rate_limit' => 'Too many submissions. Please try again later.',
             'invalid_email' => 'Please enter a valid email address.',
             'invalid_phone' => 'Please enter a valid phone number.',

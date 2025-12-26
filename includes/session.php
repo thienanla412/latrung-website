@@ -17,7 +17,7 @@ function initSecureSession() {
         $cookieParams = [
             'lifetime' => 0, // Session cookie (expires when browser closes)
             'path' => '/',
-            'domain' => parse_url(SITE_URL, PHP_URL_HOST) ?? '',
+            'domain' => '.' . preg_replace('/^www\./', '', parse_url(SITE_URL, PHP_URL_HOST) ?? ''), // Works on both www and non-www
             'secure' => SESSION_SECURE, // Only send over HTTPS
             'httponly' => SESSION_HTTPONLY, // Not accessible via JavaScript
             'samesite' => SESSION_SAMESITE // CSRF protection
