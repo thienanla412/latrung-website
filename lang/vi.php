@@ -7,7 +7,7 @@ return [
     ],
     'home' => [
         'hero' => [
-            'title' => 'In Offset Ổn Định Cho Sản Xuất Quy Mô Lớn',
+            'title' => 'Giải Pháp In Offset Bền Vững<br>Cho Doanh Nghiệp',
             'subtitle' => 'Chúng tôi tập trung vào in offset chất lượng cao, với việc kiểm soát màu sắc chặt chẽ, và kỷ luật<br>trong sản xuất và định hướng hợp tác lâu dài cho khách hàng doanh nghiệp.',
             'btn_discuss' => 'Thảo Luận Nhu Cầu',
             'btn_about' => 'Giới Thiệu',
@@ -26,14 +26,14 @@ return [
             'title' => 'Tại Sao Chọn Chúng Tôi',
             'feature1' => 'Màu Sắc Chính Xác & Nhất Quán',
             'feature2' => 'Sản Xuất Quy Mô Lớn<br>Chất Lượng Cao & Ổn Định',
-            'feature3' => 'Quy Trình Sản Xuất Nghiêm Ngặt & Giao Hàng Đúng Hạn',
+            'feature3' => 'Quy Trình Sản Xuất Nghiêm Ngặt<br>Giao Hàng Đúng Hạn',
             'feature4' => 'Chuyên Môn Sâu Về<br>Nguyên Vật Liệu & Quy Trình In',
-            'feature5' => 'Bảo Mật Nghiêm Ngặt &<br>Tuân Thủ Quy Trình',
+            'feature5' => 'Bảo Mật Nghiêm Ngặt<br>Tuân Thủ Quy Trình',
             'feature6' => 'Tư Duy Hợp Tác Dài Hạn<br>Đáng Tin Cậy',
         ],
         'industries' => [
             'title' => 'Khách Hàng Của Chúng Tôi',
-            'subtitle' => 'Chúng tôi phục vụ doanh nghiệp thuộc mọi ngành.<br>Khách hàng chính của chúng tôi đến từ:',
+            'subtitle' => 'Chúng tôi phục vụ doanh nghiệp thuộc mọi ngành nghề.<br>Khách hàng chính của chúng tôi đến từ:',
             'pharmaceutical' => 'Dược Phẩm',
             'fmcg' => 'Hàng Tiêu Dùng',
             'beauty' => 'Làm Đẹp & Mỹ Phẩm',
@@ -47,17 +47,23 @@ return [
             'title' => 'Giới Thiệu',
         ],
         'intro' => [
-            'title' => 'In Offset Ổn Định — Xây Dựng Trên Sự Nhất Quán và<br>Kỷ Luật Trong Sản Xuất',
-            'p1' => 'La TRUNG Printing & Packaging là công ty in offset và bao bì tại Thành phố Hồ Chí Minh, Việt Nam. Từ năm 2004, chúng tôi đã đồng hành cùng các khách hàng doanh nghiệp trong việc cung cấp giải pháp in ấn ổn định, có tính lặp lại cao cho bao bì và các ấn phẩm thương mại.',
-            'p2' => 'Chúng tôi không đặt trọng tâm vào các đơn hàng ngắn hạn hoặc nhỏ lẻ, mà hướng đến sự ổn định lâu dài trong việc sản xuất — nơi tính nhất quán, kiểm soát quy trình và kỷ luật giao hàng ngang tầm quan trọng với thành phẩm in.',
+            'title' => 'In Offset Cho Sản Xuất Ổn Định và Dài Hạn',
+            'p1' => 'La TRUNG Printing & Packaging là doanh nghiệp in offset và bao bì tại Thành phố Hồ Chí Minh. Từ năm 2004,<br>chúng tôi đồng hành cùng các khách hàng doanh nghiệp, cung cấp năng lực in ấn ổn định và lặp lại chính xác<br>cho bao bì và các ấn phẩm thương mại.',
+            'p2' => 'Chúng tôi hướng đến sự ổn định dài hạn trong sản xuất — nơi tính nhất quán,<br>kiểm soát quy trình và kỷ luật giao hàng quan trọng không kém thành phẩm in cuối cùng.',
         ],
         'facility' => [
             'title' => 'Cơ Sở Sản Xuất',
-            'badge' => 'Hoạt động từ 2004',
             'intro' => 'Xưởng sản xuất của chúng tôi tại TP.HCM được trang bị máy in offset hiện đại cũng như thiết bị gia công sau in, và hệ thống kiểm soát chất lượng nghiêm ngặt, đảm bảo sản xuất ổn định cho các đơn hàng lớn.',
             'feature1' => 'Máy in offset công nghiệp',
             'feature2' => 'Vận hành liên tục cho đơn hàng khối lượng lớn',
             'feature3' => 'Kiểm soát chất lượng tại mọi công đoạn',
+        ],
+        'production_management' => [
+            'title' => 'Cơ Sở Sản Xuất',
+            'intro' => 'Xưởng sản xuất được bố trí cho các đơn hàng lặp lại và khối lượng lớn, với quy trình vận hành ổn định từ in đến gia công sau in.<br><br>Chúng tôi ưu tiên bố trí máy móc, ca kíp và kiểm soát chất lượng xoay quanh các dòng sản phẩm chính của khách hàng – giúp việc sản xuất, kiểm tra và giao hàng diễn ra nhất quán qua từng đợt in.',
+            'feature1' => 'Dây chuyền in công nghiệp cho sản xuất lặp lại',
+            'feature2' => 'Bố trí ca kíp cho đơn hàng khối lượng lớn',
+            'feature3' => 'Kiểm soát chất lượng xuyên suốt quy trình',
         ],
         'what_we_do' => [
             'title' => 'Chúng Tôi Làm Gì',
@@ -71,7 +77,6 @@ return [
         'clients' => [
             'title' => 'Khách Hàng Chúng Tôi Phục Vụ',
             'intro' => 'Chúng tôi làm việc với cả các tập đoàn lớn lẫn doanh nghiệp vừa và nhỏ, hỗ trợ nhu cầu in ấn ổn định và lâu dài cho bao bì và các ấn phẩm thương mại.',
-            'confidentiality' => 'Chúng tôi không công khai logo hoặc chi tiết dự án của khách hàng, nhằm tôn trọng các yêu cầu về bảo mật thông tin.',
         ],
         'how_we_work' => [
             'title' => 'Cách Chúng Tôi Làm Việc',
@@ -80,7 +85,7 @@ return [
             'process2' => 'Kiểm Soát Màu Sắc Và Chất Lượng Nghiêm Ngặt',
             'process3' => 'Lựa Chọn Và Xử Lý Vật Liệu Cẩn Trọng',
             'process4' => 'Quản Lý Thay Đổi Được Kiểm Soát Trong Sản Xuất',
-            'conclusion' => 'Cách tiếp cận này giúp giảm thiểu lỗi, hạn chế làm lại và tránh các biến động không mong muốn — từ đó giúp khách hàng của chúng tôi vận hành chuỗi cung ứng với mức độ tin cậy cao hơn.',
+            'conclusion' => 'Cách tiếp cận này giúp giảm thiểu lỗi, hạn chế làm lại và tránh các biến động không mong muốn<br>— từ đó giúp khách hàng của chúng tôi vận hành chuỗi cung ứng với mức độ tin cậy cao hơn.',
         ],
         'confidentiality' => [
             'title' => 'Bảo Mật và Sự Uy Tín trong Xử Lý Thông Tin',
@@ -108,7 +113,7 @@ Phần lớn các mối quan hệ hợp tác của chúng tôi được xây d�
         ],
         'location' => [
             'title' => 'Địa Điểm Và Hoạt Động',
-            'content' => 'Cơ sở sản xuất của chúng tôi đặt tại Thành phố Hồ Chí Minh, Việt Nam, phục vụ cả chuỗi cung ứng trong nước và quốc tế. Chúng tôi làm việc chặt chẽ với khách hàng để điều chỉnh lịch sản xuất, kỳ vọng chất lượng, và yêu cầu giao hàng.',
+            'content' => 'Cơ sở sản xuất của chúng tôi đặt tại Thành phố Hồ Chí Minh, Việt Nam, phục vụ cả chuỗi cung ứng trong nước và quốc tế. Chúng tôi làm việc chặt chẽ với khách hàng để điều chỉnh lịch sản xuất, chất lượng kì vọng, và yêu cầu giao hàng.',
         ],
     ],
     'contact' => [

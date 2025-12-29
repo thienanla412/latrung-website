@@ -27,7 +27,7 @@ return [
             'feature1' => 'Accurate & Consistent<br>Color Reproduction',
             'feature2' => 'Stable Quality for<br>Large-Scale Production',
             'feature3' => 'Disciplined Production &<br>On-Time Delivery',
-            'feature4' => 'Deep Expertise in Printing<br>Materials & Processes',
+            'feature4' => 'Deep Expertise in<br>Printing Materials & Processes',
             'feature5' => 'Strict Confidentiality & Compliance',
             'feature6' => 'Long-Term Partnership Mindset',
         ],
@@ -49,15 +49,21 @@ return [
         'intro' => [
             'title' => 'Reliable Offset Printing Built on Consistency and Discipline',
             'p1' => 'La TRUNG Printing & Packaging is an offset printing and packaging company based in Ho Chi Minh City, Vietnam. Since 2004, we have supported business clients with stable, repeatable print production for packaging and commercial print applications.',
-            'p2' => 'Our focus is not on one-off jobs or short-term volume, but on long-term production reliability, where consistency, process control, and delivery discipline matter as much as the final printed result.',
+            'p2' => 'Our focus is on long-term production reliability, where consistency,<br>process control, and delivery discipline matter as much as the final printed result.',
         ],
         'facility' => [
             'title' => 'Our Manufacturing Facility',
-            'badge' => 'Operating since 2004',
             'intro' => 'Our Ho Chi Minh City facility is equipped with modern offset printing equipment as well as post-printing machines, and strict quality control systems, ensuring stable production for high-volume orders.',
             'feature1' => 'Industrial offset printing presses',
             'feature2' => 'Continuous operations for large-scale orders',
             'feature3' => 'Quality control at every stage',
+        ],
+        'production_management' => [
+            'title' => 'Manufacturing Facility',
+            'intro' => 'Our facility is organized for repeat and high-volume production, with stable workflows from printing through post-printing finishing.<br><br>We prioritize arranging equipment, shift schedules, and quality control around our clients\' main product lines — allowing production, inspection, and delivery to remain consistent across repeat print runs.',
+            'feature1' => 'Industrial offset presses for repeat production',
+            'feature2' => 'Shift scheduling optimized for high-volume orders',
+            'feature3' => 'Consistent quality control throughout',
         ],
         'what_we_do' => [
             'title' => 'What We Do',
@@ -71,16 +77,15 @@ return [
         'clients' => [
             'title' => 'Who We Work With',
             'intro' => 'We work with both large corporations and small to medium-sized businesses, supporting them with stable, repeatable print production for packaging and commercial applications.',
-            'confidentiality' => 'We do not publicly display client logos or project details, in respect of confidentiality expectations.',
         ],
         'how_we_work' => [
             'title' => 'How We Work',
-            'subtitle' => 'Offset printing is not only about machines or materials. It is about process and production disciplines.',
+            'subtitle' => 'Offset printing is not only about machines or materials.<br>It is about process and production disciplines.',
             'process1' => 'Clear Production Planning',
             'process2' => 'Strict Color and Quality Control',
             'process3' => 'Careful Material Selection and Handling',
             'process4' => 'Controlled Change Management During Production',
-            'conclusion' => 'This approach helps reduce errors, rework, and unexpected variation — allowing our clients to operate their supply chains with greater confidence.',
+            'conclusion' => 'This approach helps reduce errors, rework, and unexpected variation —<br>allowing our clients to operate their supply chains with greater confidence.',
         ],
         'confidentiality' => [
             'title' => 'Confidentiality and Professional Discretion',

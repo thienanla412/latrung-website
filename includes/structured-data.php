@@ -19,8 +19,8 @@ $organizationSchema = [
     'logo' => [
         '@type' => 'ImageObject',
         'url' => $logoUrl,
-        'width' => 361,
-        'height' => 364
+        'width' => 484,
+        'height' => 484
     ],
     'description' => 'Leading offset printing and packaging company since 2004. Specializing in mass production of premium printed materials for global markets.',
     'foundingDate' => '2004',
